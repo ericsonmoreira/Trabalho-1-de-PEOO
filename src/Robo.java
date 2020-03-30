@@ -1,6 +1,13 @@
 import java.util.Random;
 
 public class Robo{
+
+    // CONSTANTES AQUI
+    public final static String UP = "up";
+    public final static String DOWN = "DOWN";
+    public final static String RIGHT = "right";
+    public final static String LEFT = "LEFT";
+
     protected int eixoX;
     protected int eixoY;
     protected String cor;
@@ -32,28 +39,28 @@ public class Robo{
 
     public void mover(String movimento) throws MovimentoInvalidoException { //thows para classe RoboInteligente
         try {
-            if (movimento.equalsIgnoreCase("up")) {
+            if (movimento.equalsIgnoreCase(UP)) {
                 if(eixoY != 5){ //até (0,5)
                     System.out.println("[" + eixoX + "," + (++eixoY) + "]"); //incrementa 1 no eixoY
                 }else{
                     throw new MovimentoInvalidoException("Movimento inválido!"); //na exceção printa isso
                 }
             }
-            if (movimento.equalsIgnoreCase("down")) {
+            if (movimento.equalsIgnoreCase(DOWN)) {
                 if(eixoY != 0){ //começa em (0,0)
                     System.out.println("[" + eixoX + "," + (--eixoY) + "]"); //decrementa 1 no eixoY
                 }else{
                     throw new MovimentoInvalidoException("Movimento inválido!");
                 }
             }
-            if (movimento.equalsIgnoreCase("right")) {
+            if (movimento.equalsIgnoreCase(RIGHT)) {
                 if(eixoX != 5){ //até (5,0)
                     System.out.println("[" + (++eixoX) + "," + eixoY + "]"); //incrementa 1 no eixoX
                 }else{
                     throw new MovimentoInvalidoException("Movimento inválido!");
                 }
             }
-            if (movimento.equalsIgnoreCase("left")) {
+            if (movimento.equalsIgnoreCase(LEFT)) {
                 if(eixoX != 0){ //começa (0,0)
                     System.out.println("[" + (--eixoX) + "," + eixoY + "]"); //decrementa 1 no eixoX
                 }else{
@@ -79,13 +86,20 @@ public class Robo{
         }
     }
 
-    public boolean verificar(Alimento alimento) { //verifica se as coordenadas do robo são iguais aos do alimento
+    /**
+     * Verifica se as coordenadas do robo são iguais aos do alimento
+     * @param alimento
+     * @return true se o {@link Robo} achou o alimento.
+     */
+    public boolean verificar(Alimento alimento) {
         if((getEixoX() == alimento.getAlimentoX()) && (getEixoY() == alimento.getAlimentoY())){
             return true;
         }
         return false;
     }
 
+    // Pderia mudar o nome desse método para melhor entendomento.
+    // randomicamente o que?
     public void randomicamente(){ //andar aleatoriamente
         Random random = new Random(); //instanciar classe
         try {

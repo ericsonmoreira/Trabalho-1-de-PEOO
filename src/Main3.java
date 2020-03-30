@@ -1,6 +1,11 @@
 import java.util.Scanner;
 
+/**
+ * Classe com mais para Dispulta de Robos.
+ * Um normal e outro inteligente.
+ */
 public class Main3 {
+
     public static void main(String[] args) {
         Robo r3 = new Robo("cinza");
         RoboInteligente r4 = new RoboInteligente("preto");
@@ -35,4 +40,5 @@ public class Main3 {
         System.out.println("Robo 3 fez " + quant3 + " movimentos");
         System.out.println("RoboInteligente 4 fez " + quant4 + " movimentos");
     }
+
 }

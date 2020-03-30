@@ -1,6 +1,10 @@
 import java.util.Scanner;
 
+/**
+ * Classe com main para dispulta de Robos.
+ */
 public class Main2 {
+
     public static void main(String[] args) {
         Robo r1 = new Robo("azul");
         Robo r2 = new Robo("vermelho");

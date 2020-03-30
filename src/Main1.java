@@ -1,6 +1,10 @@
 import java.util.Scanner;
 
+/**
+ * Classe para mover o Robo pelos comandos do usuário.
+ */
 public class Main1 {
+
     public static void main(String[] args) throws MovimentoInvalidoException {
         Robo r = new Robo("amarelo");
 
@@ -20,4 +24,5 @@ public class Main1 {
         System.out.println("Você chegou!");
 
     }
+
 }
